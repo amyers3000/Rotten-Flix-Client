@@ -4,12 +4,17 @@ import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
 import { Form } from 'react-bootstrap'
 import { Rating } from 'react-simple-star-rating'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
 
 
 function Gallery() {
     const [show, setShow] = useState(false)
+    const [rating, setRating] = useState(0)
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
+    const handleRating = (rate) => {
+        setRating(rate)
+    }
     
     return (
         <>
@@ -36,15 +41,15 @@ function Gallery() {
                 <Form>
                     <Form.Group className="mb-3" controlId="Form.ControlInput">
                         <Form.Label>Rating</Form.Label>
-                        <Rating />
+                        <Rating onClick={handleRating} ratingValue={rating} />
                     </Form.Group>
-                    <Form.Group
+                    <FloatingLabel
+                        controlId="floatingTextarea"
+                        label="Comments"
                         className="mb-3"
-                        controlId="Form.ControlTextarea"
                     >
-                        <Form.Label>Comment</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
+                    <Form.Control as="textarea" placeholder="Leave a comment here" />
+                    </FloatingLabel>
                 </Form>
             </Modal.Body>
             <Modal.Footer>

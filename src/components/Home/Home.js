@@ -2,9 +2,9 @@ import NavBar from "./Navbar/Navbar"
 import Gallery from "./Gallery/gallery"
 
 const Home = () => {
-    const galleryTiles = () => {
+    const genreTiles = () => {
         let tiles = []
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 30; i++) {
             tiles.push(<Gallery key={i} />)
         }
         return (
@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <>
             <NavBar />
-            {galleryTiles()}
+            {genreTiles()}
         </>
     )
 }
