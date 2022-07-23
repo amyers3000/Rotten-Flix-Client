@@ -2,10 +2,20 @@ import NavBar from "./Navbar/Navbar"
 import Gallery from "./gallery"
 
 const Home = () => {
+    const galleryTiles = () => {
+        let tiles = []
+        for (let i = 0; i < 50; i++) {
+            tiles.push(<Gallery key={i} />)
+        }
+        return (
+            <div className="genre">{tiles}</div>
+        )
+    }
+
     return (
         <>
             <NavBar />
-            <Gallery />
+            {galleryTiles()}
         </>
     )
 }
