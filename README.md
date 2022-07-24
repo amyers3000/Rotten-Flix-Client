@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Milestone Project 2: MERN Stack Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requirements
 
-## Available Scripts
+### `General Requirements`
 
-In the project directory, you can run:
+This is a group project!
+Just to clarify, your instructional staff will help you in building groups in your cohort.
+This game cannot be an assignment we've already done in class.
+This application must run in a web browser.
+This application must be tracked in GitHub, with a minimum of 20 commits.
+Your empty project repository must be up on GitHub on day one of development and aim for multiple commits per day.
+This application must be deployed! You will need to use a service like Heroku, as this project will need to have a deployed back-end.
 
-### `npm start`
+### `Application Requirements`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Your application must be a full-stack application using your own front and back-end.
+Your application should use full CRUD functionality with the database.
+Your application should be a complete product.
+Your application must be deployed online using deployment sites like Heroku or Netlify.
+Effort must be spent on styling and appearance
+You should use several sensibly named components in React
+The application should have a Readme.md file in the GitHub repository that describes the inspiration for the application, how to use the application, lists the technologies used to build the application, and addresses any outstanding bugs or unfinished functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Bonus Ideas`
 
-### `npm test`
+Utilize an external styling library for React like React-Bootstrap or Material UI.
+Explore NPM packages that will help in the logic of your application.
+Try to use the StateProvider in Redux to manipulate the state of your application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Deliverables`
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A working application built by the whole group
+A link to your application, which is deployed somewhere on the internet
+A link to your GitHub repository, so we can see the progress on your application
+A README.md file with the requirements stated above

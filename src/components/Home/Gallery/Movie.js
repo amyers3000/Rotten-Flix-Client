@@ -18,15 +18,17 @@ function Movie() {
     
     return (
         <>
-        <Card className='movie' style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="ogo192.png" />
+        <Card className='movie bg-dark text-white' style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="logo192.png" style={{ width: '80%'}} />
             <Card.Body>
-                <Card.Title>Movie Title</Card.Title>
+                <Card.ImgOverlay>
+                    <Card.Title>Movie Title</Card.Title>
                 <Card.Text>
                     Some quick example text to build on the Movie title and make up the
                     bulk of the content here.
                 </Card.Text>
                 <Button variant="primary" onClick={handleShow}>Rate This</Button>
+                </Card.ImgOverlay>                
             </Card.Body>
         </Card>
         
@@ -64,5 +66,4 @@ function Movie() {
         </>
     )
 }
-
 export default Movie
