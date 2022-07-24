@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap'
 
 function NavBar() {
     return (
-        <Navbar bg="dark" variant="dark" >
+        <Navbar bg="dark" variant="dark" sticky='top' >
             <Container>
                 <Navbar.Brand href="#home" style={{ 'color': 'red' }}>Rotten-FLIX</Navbar.Brand>
                 <Navbar.Toggle />

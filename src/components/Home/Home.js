@@ -1,25 +1,12 @@
 import NavBar from "./Navbar/Navbar"
-import Gallery from "./Gallery/gallery"
+import Gallery from "./Gallery/Gallery"
 
-const Home = () => {
-    const genreTiles = () => {
-        let tiles = []
-        for (let i = 0; i < 3; i++) {
-            tiles.push(<Gallery key={i} />)
-        }
-        return (
-            <div className="genre"><h3>Genre</h3>{tiles}</div>
-        )
-    }
-
+function Home() {
     return (
         <>
-            <NavBar />
-            {genreTiles()}
-            {genreTiles()}
-            {genreTiles()}
+        <NavBar />
+        <Gallery />
         </>
     )
 }
-
 export default Home
