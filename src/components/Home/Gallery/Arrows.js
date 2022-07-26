@@ -7,7 +7,9 @@ function Arrow({
   onClick
 }) {
   return (
-    <button
+    <button 
+      type="button" 
+      class="btn btn-default btn-lg"
       disabled={disabled}
       onClick={onClick}
       style={{
@@ -45,7 +47,7 @@ export function LeftArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-      Left
+      <span class="glyphicon glyphicon-menu-left" aria-hidden="true">Left</span>
     </Arrow>
   );
 }
@@ -69,7 +71,7 @@ export function RightArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollNext()}>
-      Right
+      <span class="glyphicon glyphicon-menu-right" aria-hidden="true">Right</span>
     </Arrow>
   );
 }

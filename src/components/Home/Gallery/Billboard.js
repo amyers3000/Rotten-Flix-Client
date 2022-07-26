@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 
 function BillBoard() {
     return (
-        <Card className="bg-dark text-white">
+        <Card className="billboard bg-dark text-white">
             <Card.Img src="logo512.png" alt="Card image" style={{ width: '150px'}} />
             <Card.ImgOverlay>
                 <Card.Title>Movie Title</Card.Title>

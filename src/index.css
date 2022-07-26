@@ -15,7 +15,7 @@
 }
 
 .react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
 }
 
 .react-horizontal-scrolling-menu--scroll-container {

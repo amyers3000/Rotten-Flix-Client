@@ -8,8 +8,7 @@ import UsePreventBodyScroll from "./usePreventBodyScroll";
 function Gallery() {
     
 
-    const genreTiles = () => {
-        
+    const genreTiles = () => {        
         let tiles = []
         for (let i = 0; i < 7; i++) {
             tiles.push(i)
