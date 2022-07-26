@@ -9,8 +9,9 @@ function Gallery() {
     
 
     const genreTiles = () => {
+        
         let tiles = []
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 7; i++) {
             tiles.push(i)
         }
     const { disableScroll, enableScroll } = UsePreventBodyScroll();
@@ -18,23 +19,21 @@ function Gallery() {
         return (
             <div className="genre bg-dark text-white" onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
                 <h3>Genre</h3>
-                
-                    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-                        <div className="movieBottle">{tiles.map((id)=> <Movie itemId={id} key={id} />)}</div>
-                    </ScrollMenu>
-                
+                <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+                    <div className="movieBottle">{tiles.map(( id ) => (
+                        <Movie
+                            itemId={id} // NOTE: itemId is required for track items
+                            title={id}
+                            key={id}
+                        />
+                    ))}</div>
+                </ScrollMenu>                
             </div>
         )
     }
 
     return (
         <>            
-            {genreTiles()}
-            {genreTiles()}
-            {genreTiles()}
-            {genreTiles()}
-            {genreTiles()}
-            {genreTiles()}
             {genreTiles()}
             {genreTiles()}
             {genreTiles()}
