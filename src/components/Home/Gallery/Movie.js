@@ -33,8 +33,6 @@ function Movie( props ) {
             </Modal.Header>
             <Modal.Body>
                 <p>Oat cake halvah sweet roll liquorice sweet jujubes. Dessert lemon drops ice cream jelly-o I love sweet sesame snaps. Chocolate cake toffee soufflé sugar plum biscuit. Macaroon donut lemon drops toffee sweet shortbread I love.</p>
-                <p>I love apple pie donut jujubes topping. Halvah candy canes I love liquorice chocolate. Chocolate bar shortbread cookie lollipop tiramisu gummies brownie soufflé.</p>
-                <p>Marshmallow apple pie chocolate chocolate cake tart halvah. Gummi bears I love I love tart bear claw croissant wafer. Marshmallow cake brownie I love liquorice powder bonbon. Powder powder topping jelly beans chupa chups croissant soufflé tart sweet.</p>
                 <p>{props.itemId.genre}</p>
                 <p>Running time {props.itemId.runningTimeInMinutes} Minutes</p>
                 <Form>
