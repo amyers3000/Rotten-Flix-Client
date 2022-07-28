@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 
-function NavBar() {
+function NavBar({ user }) {
     return (
         <Navbar bg="dark" variant="dark" sticky='top' >
             <Container>
@@ -28,7 +28,7 @@ function NavBar() {
                         <Button variant="outline-success">Search</Button>
                     </Form>
                     <Navbar.Text>
-                        Signed in as: <a href="#login">Brandon Dega</a>
+                        Signed in as: <a href="#login">{user.username}</a>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

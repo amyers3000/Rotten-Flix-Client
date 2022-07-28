@@ -25,7 +25,7 @@ function Home() {
 
     return (
         <>
-            <NavBar />
+            <NavBar user={location.state.user} />
             <BillBoard />
             <Gallery movie={movie} />
         </>
