@@ -7,7 +7,7 @@ import { Rating } from 'react-simple-star-rating'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
 
 
-function Movie() {
+function Movie( props ) {
     const [show, setShow] = useState(false)
     const [rating, setRating] = useState(0)
     const handleClose = () => setShow(false)
@@ -18,28 +18,25 @@ function Movie() {
     
     return (
         <>
-        <Card className='movie bg-dark text-white' style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="logo192.png" style={{ width: '80%'}} />
+        {/* {console.log(props, 'movie page')} */}
+        <Card className='movie bg-dark text-white' key={props.key} style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={props.itemId.image} style={{ width: '80%'}} />
             <Card.Body>
-                <Card.ImgOverlay>
-                    <Card.Title>Movie Title</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the Movie title and make up the
-                    bulk of the content here.
-                </Card.Text>
-                <Button variant="primary" onClick={handleShow}>Rate This</Button>
-                </Card.ImgOverlay>                
+                <Card.Title>{props.itemId.title}</Card.Title>
+                <Button variant="primary" onClick={handleShow}>Rate This</Button>                
             </Card.Body>
         </Card>
         
         <Modal size="lg" show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Movie Title</Modal.Title>
+                <Modal.Title>{props.itemId.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <p>Oat cake halvah sweet roll liquorice sweet jujubes. Dessert lemon drops ice cream jelly-o I love sweet sesame snaps. Chocolate cake toffee soufflé sugar plum biscuit. Macaroon donut lemon drops toffee sweet shortbread I love.</p>
                 <p>I love apple pie donut jujubes topping. Halvah candy canes I love liquorice chocolate. Chocolate bar shortbread cookie lollipop tiramisu gummies brownie soufflé.</p>
                 <p>Marshmallow apple pie chocolate chocolate cake tart halvah. Gummi bears I love I love tart bear claw croissant wafer. Marshmallow cake brownie I love liquorice powder bonbon. Powder powder topping jelly beans chupa chups croissant soufflé tart sweet.</p>
+                <p>{props.itemId.genre}</p>
+                <p>Running time {props.itemId.runningTimeInMinutes} Minutes</p>
                 <Form>
                     <Form.Group className="mb-3" controlId="Form.ControlInput">
                         <Form.Label>Rating</Form.Label>

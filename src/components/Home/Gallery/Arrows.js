@@ -9,7 +9,7 @@ function Arrow({
   return (
     <button 
       type="button" 
-      class="btn btn-default btn-lg"
+      className="btn btn-default btn-lg"
       disabled={disabled}
       onClick={onClick}
       style={{
@@ -47,7 +47,7 @@ export function LeftArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-      <span class="glyphicon glyphicon-menu-left" aria-hidden="true">Left</span>
+      <span className="glyphicon glyphicon-menu-left" aria-hidden="true">Left</span>
     </Arrow>
   );
 }
@@ -57,13 +57,13 @@ export function RightArrow() {
     isLastItemVisible,
     scrollNext,
     visibleItemsWithoutSeparators
-  } = React.useContext(VisibilityContext);
+  } = useContext(VisibilityContext);
 
   // console.log({ isLastItemVisible });
   const [disabled, setDisabled] = React.useState(
     !visibleItemsWithoutSeparators.length && isLastItemVisible
   );
-  React.useEffect(() => {
+  useEffect(() => {
     if (visibleItemsWithoutSeparators.length) {
       setDisabled(isLastItemVisible);
     }
@@ -71,7 +71,7 @@ export function RightArrow() {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollNext()}>
-      <span class="glyphicon glyphicon-menu-right" aria-hidden="true">Right</span>
+      <span className="glyphicon glyphicon-menu-right" aria-hidden="true">Right</span>
     </Arrow>
   );
 }

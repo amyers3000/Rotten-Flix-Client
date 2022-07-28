@@ -1,26 +1,3 @@
 /* * {
     border: 1px solid teal;
 } */
-.genre {
-    display: block;
-}
-.movie {
-    flex: 4 25%;
-    height: 200px;
-    margin-bottom: 2%;
-}
-.movieBottle {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-.react-horizontal-scrolling-menu--scroll-container {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
