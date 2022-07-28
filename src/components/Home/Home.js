@@ -19,11 +19,12 @@ function Home() {
             }
         }
         fetchMovies()
+        if (!location.state) return navigate('/')
+        // !location.state && navigate('/')
     }, [])
 
     return (
         <>
-            {!location.state && navigate('/')}
             <NavBar />
             <BillBoard />
             <Gallery movie={movie} />
