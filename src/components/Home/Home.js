@@ -2,9 +2,11 @@ import NavBar from "./Navbar/Navbar"
 import BillBoard from "./Gallery/Billboard"
 import Gallery from "./Gallery/Gallery"
 import { useState, useEffect } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 
 function Home() {
-
+    const location = useLocation();
+    const navigate = useNavigate();
     const [movie, setMovie] = useState([])
 
     useEffect(() => {
@@ -21,9 +23,10 @@ function Home() {
 
     return (
         <>
-        <NavBar />
-        <BillBoard />
-        <Gallery movie={movie} />
+            {!location.state && navigate('/')}
+            <NavBar />
+            <BillBoard />
+            <Gallery movie={movie} />
         </>
     )
 }
