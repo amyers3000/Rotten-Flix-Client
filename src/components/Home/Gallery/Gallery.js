@@ -5,7 +5,6 @@ import Movie from "./Movie"
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import { LeftArrow, RightArrow } from "./Arrows";
 import { Header } from "./Header"
-import { Footer } from "./Footer"
 
 function Gallery( props ) {      
     const [movies, setMovies] = useState({})
@@ -27,7 +26,7 @@ function Gallery( props ) {
         <>
             {movies && Object.keys(movies).map((genre) => (
                 <div key={genre} className="genre bg-dark text-white">
-                    <ScrollMenu Header={<Header genre={genre} />} Footer={<Footer />} LeftArrow={LeftArrow} RightArrow={RightArrow}>
+                    <ScrollMenu Header={<Header genre={genre} />} LeftArrow={LeftArrow} RightArrow={RightArrow}>
                         <div className="movieBottle">{movies[genre].map((data) => (
                             <Movie
                                 key={data._id}
