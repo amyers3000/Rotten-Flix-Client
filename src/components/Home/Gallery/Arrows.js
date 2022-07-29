@@ -60,7 +60,7 @@ export function RightArrow() {
   } = useContext(VisibilityContext);
 
   // console.log({ isLastItemVisible });
-  const [disabled, setDisabled] = React.useState(
+  const [disabled, setDisabled] = useState(
     !visibleItemsWithoutSeparators.length && isLastItemVisible
   );
   useEffect(() => {

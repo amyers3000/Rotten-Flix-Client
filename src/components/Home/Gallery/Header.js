@@ -13,7 +13,7 @@ export function Header( props ) {
         justifyContent: "left"
       }}
     >
-      <h1>Genre</h1>
+      <h1>{props.genre}</h1>
     </header>
   );
 }

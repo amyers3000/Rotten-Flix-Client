@@ -28,7 +28,7 @@ function NavBar({ user }) {
                         <Button variant="outline-success">Search</Button>
                     </Form>
                     <Navbar.Text>
-                        Signed in as: <a href="#login">{user.username}</a>
+                        Signed in as: <a href="/">{user.username}</a>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

@@ -18,8 +18,7 @@ function Movie( props ) {
     
     return (
         <>
-        {/* {console.log(props, 'movie page')} */}
-        <Card className='movie bg-dark text-white' key={props.key} style={{ width: '18rem' }} onClick={handleShow}>
+        <Card className='movie bg-dark text-white' style={{ width: '18rem' }} onClick={handleShow}>
             <Card.Img variant="top" src={props.itemId.image} style={{ width: '80%'}} />
             <Card.Body>
                 <Card.Title>{props.itemId.title}</Card.Title>
