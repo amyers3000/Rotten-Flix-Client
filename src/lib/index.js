@@ -19,3 +19,5 @@ export const CreateNewUser = async (credentials) => {
     }
 }
 export const FetchMovies = () => axios.get(`${baseURL}/movies`)
+
+export const genres = [ "Action", "Adventure", "Sci-Fi", "Comedy", "Horror", "Animation" ]

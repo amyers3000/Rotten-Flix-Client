@@ -3,32 +3,36 @@ import BillBoard from "./Gallery/Billboard"
 import Gallery from "./Gallery/Gallery"
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
+import { FetchMovies, genres } from "../../lib"
 
 function Home() {
     const location = useLocation();
     const navigate = useNavigate();
-    const [movie, setMovie] = useState([])
+    const [movies, setMovies] = useState({})
 
     useEffect(() => {
-        const fetchMovies = async () => {
-            const response = await fetch('https://rotten-flix-api.herokuapp.com/movies')
-            const data = await response.json()
-            // console.log(data)
-            if (data.length > 0) {
-                setMovie(data)
-            }
-        }
-        fetchMovies()
+
         if (!location.state) return navigate('/')
-        // !location.state && navigate('/')
+
+        const fetchMovies = async () => {
+            let temp = {}
+            const response = await FetchMovies();
+            genres.forEach(genre => {
+                Object.assign(temp, {[genre]: response.data.filter( d => d.genre === genre)})
+            })
+            setMovies(temp)
+        }
+
+        fetchMovies()
     }, [])
 
     return (
         <>
             <NavBar user={location.state.user} />
             <BillBoard />
-            <Gallery movie={movie} />
+            <Gallery movies={movies} />
         </>
     )
 }
+
 export default Home
