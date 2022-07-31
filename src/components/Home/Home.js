@@ -18,7 +18,7 @@ function Home() {
     return (
         <>
             <NavBar user={location.state.user} />
-            <BillBoard />
+            {/* <BillBoard /> */}
             <Gallery />
         </>
     )
