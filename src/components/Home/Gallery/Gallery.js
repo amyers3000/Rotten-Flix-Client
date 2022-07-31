@@ -20,8 +20,9 @@ function Gallery() {
             genres.forEach(genre => {
                 Object.assign(temp, {[genre]: response.data.filter( d => d.genre === genre)})
             })
-            console.log(temp, "what to map")
+            console.log(temp, "gallery.js line 23")
             setMovies(temp)
+            // Length is not working
             setPageCount(Math.ceil(movies.length / itemsPerPage))
         }
 
@@ -31,7 +32,7 @@ function Gallery() {
 
     // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * pageCount) % movies.genre.length;
+    const newOffset = (event.selected * itemsPerPage) % movies.genre.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );

@@ -1,19 +1,19 @@
 import React from "react";
 
-export function Header( props ) {
-  // console.log(props)
+export function Header({ genre }) {
+  console.log(genre, "header.js line4")
   return (
     <header
       style={{
         backgroundColor: "#222",
-        height: "10px",
+        height: "15px",
         padding: "20px",
         color: "white",
         display: "flex",
         justifyContent: "left"
       }}
     >
-      <h1>{props.genre}</h1>
+      <h2>{genre}</h2>
     </header>
   );
 }
