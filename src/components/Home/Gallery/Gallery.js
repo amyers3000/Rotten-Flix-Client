@@ -7,6 +7,7 @@ import ReactPaginate from "react-paginate";
 
 function Gallery() {      
     const [movies, setMovies] = useState({})
+    const [pageNum, setPageNum] = useState({ Action: 0, Adventure: 0, SciFi: 0, Comedy: 0, Horror: 0, Animation: 0 })
     const [pageCount, setPageCount] = useState(0)
     const [itemOffset, setItemOffset] = useState(0)
     const itemsPerPage = 5
@@ -19,11 +20,11 @@ function Gallery() {
             const response = await FetchMovies();
             genres.forEach(genre => {
                 Object.assign(temp, {[genre]: response.data.filter( d => d.genre === genre)})
+                console.log({[genre]:Math.ceil(genre.length / itemsPerPage)})
+                setPageCount({...pageCount,[genre]: Math.ceil(genre.length / itemsPerPage)})
             })
-            console.log(temp, "gallery.js line 23")
-            setMovies(temp)
-            // Length is not working
-            setPageCount(Math.ceil(movies.length / itemsPerPage))
+            console.log(pageCount, "gallery.js line 23")
+            setMovies(temp)            
         }
 
         fetchMovies()
@@ -32,7 +33,7 @@ function Gallery() {
 
     // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % movies.genre.length;
+    const newOffset = (event.selected * itemsPerPage) % pageNum.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -58,10 +59,7 @@ function Gallery() {
                         pageCount={pageCount}
                         previousLabel="< previous"
                         renderOnZeroPageCount={null}
-                    >
-                        
-                        
-                    </ReactPaginate>
+                    />
                 </div>
             ))}
         </>

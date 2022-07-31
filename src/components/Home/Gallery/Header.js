@@ -1,7 +1,7 @@
 import React from "react";
 
 export function Header({ genre }) {
-  console.log(genre, "header.js line4")
+  // console.log(genre, "header.js line4")
   return (
     <header
       style={{
