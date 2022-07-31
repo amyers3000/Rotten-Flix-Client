@@ -23,7 +23,7 @@ function Gallery() {
                 console.log({[genre]:Math.ceil(genre.length / itemsPerPage)})
                 setPageCount({...pageCount,[genre]: Math.ceil(genre.length / itemsPerPage)})
             })
-            console.log(pageCount, "gallery.js line 23")
+            console.log(pageCount, "gallery.js line 26")
             setMovies(temp)            
         }
 
