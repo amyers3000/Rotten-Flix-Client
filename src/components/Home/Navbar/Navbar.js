@@ -5,7 +5,6 @@ import { Button } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 
 function NavBar({ user }) {
-    console.log(user)
     return (
         <Navbar bg="dark" variant="dark" sticky='top' >
             <Container>

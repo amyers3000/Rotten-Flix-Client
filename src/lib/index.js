@@ -20,4 +20,21 @@ export const CreateNewUser = async (credentials) => {
 }
 export const FetchMovies = () => axios.get(`${baseURL}/movies`)
 
+export const SaveRating = async (rating) => {
+    try {
+        const response = await axios.post(`${baseURL}/ratings`, rating)
+        return {message: response.data.message, status: response.status};
+    } catch (error) {
+        return { message: error.response.data.message, status: error.response.status }
+    }
+} 
+export const SaveReview = async (review) => {
+    try {
+        const response = await axios.post(`${baseURL}/reviews`, review)
+        return {message: response.data.message, status: response.status};
+    } catch (error) {
+        return { message: error.response.data.message, status: error.response.status }
+    }
+} 
+
 export const genres = [ "Action", "Adventure", "Sci-Fi", "Comedy", "Horror", "Animation" ]
