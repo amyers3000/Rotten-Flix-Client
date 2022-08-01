@@ -1,12 +1,10 @@
 import NavBar from "./Navbar/Navbar"
-import BillBoard from "./Gallery/Billboard"
-import Gallery from "./Gallery/Gallery"
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { FetchMovies, genres } from "../../lib"
+import MovieRow from "./MovieRow/MovieRow"
 
-
-function Home() {
+const Home = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [movies, setMovies] = useState([])
@@ -24,13 +22,19 @@ function Home() {
         }
 
         fetchMovies()
-    }, [])
+    }, [location,navigate])
 
     return (
         <>
             <NavBar user={location.state.user} />
-            {/* <BillBoard /> */}
-            <Gallery data={movies} />
+            <div className="containerMain" style={{backgroundColor: "#141414", color: "#e9ecef"}}>
+                {Object.keys(movies).map(movie => (
+                    <>
+                        <h2>{movie}</h2>
+                        <MovieRow movies={movies[movie]} key={movie} />
+                    </>
+                ))}
+            </div>
         </>
     )
 }
