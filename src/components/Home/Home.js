@@ -29,10 +29,10 @@ const Home = () => {
             <NavBar user={location.state.user} />
             <div className="containerMain" style={{backgroundColor: "#141414", color: "#e9ecef"}}>
                 {Object.keys(movies).map(movie => (
-                    <>
+                    <div key={movie}>
                         <h2>{movie}</h2>
                         <MovieRow movies={movies[movie]} key={movie} />
-                    </>
+                    </div>
                 ))}
             </div>
         </>

@@ -81,8 +81,8 @@ const MovieItem = ({ movie }) => {
                         </FloatingLabel>
                     </Form>
                     {movie.reviews.length ?
-                        movie.reviews.map(review => (
-                            <p>{review.review}</p>
+                        movie.reviews.map( (review,key) => (
+                            <p key={key}>{review.review}</p>
                         ))
                         :
                         <p>No Reviews...</p>
