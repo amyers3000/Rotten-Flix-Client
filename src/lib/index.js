@@ -2,6 +2,17 @@ import axios from "axios";
 
 const baseURL = process.env.REACT_APP_SERVER_API;
 
+export const AuthenticateSession = async (user) => {
+    try {
+        const response = await axios.post(`${baseURL}/auth/access`, {uid: user.uid}, {headers: {authorization: `BEARER ${user.accessToken}`}})
+        return response.data
+    } catch (error) {
+        if(error.response.status === 403) {
+            return "Your session has expired!"
+        }
+    }
+}
+
 export const SignIn = async (credentials) => {
     try {
         const response = await axios.post(`${baseURL}/auth`, credentials)

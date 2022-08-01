@@ -3,8 +3,11 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 
-function NavBar({ user }) {
+function NavBar() {
+    const location = useLocation()
+
     return (
         <Navbar bg="dark" variant="dark" sticky='top' >
             <Container>
@@ -28,7 +31,7 @@ function NavBar({ user }) {
                         <Button variant="outline-success">Search</Button>
                     </Form>
                     <Navbar.Text>
-                        Signed in as: <a href="/">{user.username}</a>
+                        Signed in as: <a href="/">{location.state && location.state.user.username}</a>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>
