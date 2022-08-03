@@ -63,6 +63,7 @@ const MovieItem = ({ movie }) => {
                 <Modal.Body>
                 {error.display && <Error setError={setError} error={error} />}
                     <p><b>Genre:</b> {movie.genre}</p>
+                    <p><b>Release Date:</b> {movie.year}</p>
                     <p><b>Running Time In Minutes:</b> {movie.runningTimeInMinutes}</p>
                     {overAllRating > 0 ? 
                         <Form.Group className="mb-3" controlId="Form.ControlInput">
