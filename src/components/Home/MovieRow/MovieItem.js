@@ -7,9 +7,11 @@ import { Rating } from 'react-simple-star-rating'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
 import {useLocation} from "react-router-dom"
 import { SaveRating, SaveReview } from '../../../lib'
+import Error from '../../Error/Error'
 
 const MovieItem = ({ movie }) => {
     const location = useLocation()
+    const [error,setError] = useState({display: false, message: "" })
     const [show, setShow] = useState(false)
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState()
@@ -23,18 +25,20 @@ const MovieItem = ({ movie }) => {
         if (rating > 0 && review) {
             const ratingResponse = await SaveRating({rating: rating, username: location.state.user.uid, movie: movie._id})
             const reviewResponse = await SaveReview({review: review, username: location.state.user.uid, movie: movie._id})
-            console.log(ratingResponse)
-            console.log(reviewResponse)
+            const bool = ratingResponse !== 200 && reviewResponse !== 200;
+            
+            bool ? setError({...error, display: true, message: `${ratingResponse.message} : ${reviewResponse.message}`})
+            : ratingResponse.status !== 200 ? setError({...error, display: true, message: ratingResponse.message }) : setError({...error, display: true, message: reviewResponse.message })
             return;
         }
         if (rating > 0) {
             const response = await SaveRating({rating: rating, username: location.state.user.uid, movie: movie._id})
-            console.log(response)
+            response.status !== 200 && setError({...error, display: true, message: response.message}) 
             return;
         }
         if (review) {
             const response = await SaveReview({review: review, username: location.state.user.uid, movie: movie._id})
-            console.log(response)
+            response.status !== 200 && setError({...error, display: true, message: response.message}) 
         }
     }
     useEffect(() => {
@@ -57,6 +61,7 @@ const MovieItem = ({ movie }) => {
                     <Modal.Title>{movie.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                {error.display && <Error setError={setError} error={error} />}
                     <p>Genre: {movie.genre}</p>
                     <p>Running Time In Minutes: {movie.runningTimeInMinutes}</p>
                     {overAllRating > 0 ? 

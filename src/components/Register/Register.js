@@ -2,22 +2,24 @@ import "./Register.css"
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { CreateNewUser } from "../../lib"
+import Error from "../Error/Error"
 
 const Register = () => {
     const navigate = useNavigate();
+    const [error,setError] = useState({display: false, message: "" })
     const [signUp, setSignUp] = useState(false);
     const [newUser,setNewUser] = useState({ username: "", password: "" })
 
     const handleNewUser = async () => {
         const response = await CreateNewUser(newUser);
-        response.status === 200 ? navigate('/login') : console.log(response.message);
+        response.status === 200 ? navigate('/login') : setError({...error, display: true, message: response.message})
     }
 
     return (
         <div className="register">
             <div className="top">
                 <div className="wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="" />
+                    <h1 style={{color: "red"}}>Rotten-Flix</h1>
                     <Link to={"/login"}>
                         <button>Sign In</button>
                     </Link>
@@ -39,6 +41,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            {error.display && <Error setError={setError} error={error} />}
         </div>
     )
 }

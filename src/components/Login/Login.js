@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./Login.css"
 import { SignIn } from "../../lib"
 import { useNavigate, Link } from "react-router-dom"
-import { Alert } from "react-bootstrap"
+import Error from "../Error/Error"
 
 const Login = () => {
     const navigate = useNavigate()
@@ -11,7 +11,7 @@ const Login = () => {
     const handleSignIn = async (e) => {
         e.preventDefault();
         const response = await SignIn(credentials)
-        response.message ? setError({...error, display: true, message: `${response.status}: ${response.message}` }) : navigate('/home', { state: {user: response} } )
+        response.message ? setError({...error, display: true, message: response.message }) : navigate('/home', { state: {user: response} } )
     }
     return (
         <div className="login">
@@ -21,11 +21,6 @@ const Login = () => {
                 </div>
                 <div className="mid">
                     <div className="wrapper">
-                        {error.display &&
-                            <Alert variant="danger" onClose={() => setError({...error, display: false })} dismissible style={{ position: "absolute", top: "25%" }}>
-                                {error.message}
-                            </Alert>
-                        }
                         <form onSubmit={handleSignIn}>
                             <h1>Sign In</h1>
                             <input
@@ -46,6 +41,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            {error.display && <Error setError={setError} error={error} />}
         </div>
     )
 }
