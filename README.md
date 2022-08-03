@@ -1,36 +1,6 @@
-# Milestone Project 2: MERN Stack Application
+# Rotten Flix
 
-## Requirements
+Mashup between Rotten Tomatoes and Netlfix.
+Users can create an account, rate movies, and leave reviews.
 
-### `General Requirements`
-
-This is a group project!
-Just to clarify, your instructional staff will help you in building groups in your cohort.
-This game cannot be an assignment we've already done in class.
-This application must run in a web browser.
-This application must be tracked in GitHub, with a minimum of 20 commits.
-Your empty project repository must be up on GitHub on day one of development and aim for multiple commits per day.
-This application must be deployed! You will need to use a service like Heroku, as this project will need to have a deployed back-end.
-
-### `Application Requirements`
-
-Your application must be a full-stack application using your own front and back-end.
-Your application should use full CRUD functionality with the database.
-Your application should be a complete product.
-Your application must be deployed online using deployment sites like Heroku or Netlify.
-Effort must be spent on styling and appearance
-You should use several sensibly named components in React
-The application should have a Readme.md file in the GitHub repository that describes the inspiration for the application, how to use the application, lists the technologies used to build the application, and addresses any outstanding bugs or unfinished functionality
-
-### `Bonus Ideas`
-
-Utilize an external styling library for React like React-Bootstrap or Material UI.
-Explore NPM packages that will help in the logic of your application.
-Try to use the StateProvider in Redux to manipulate the state of your application.
-
-### `Deliverables`
-
-A working application built by the whole group
-A link to your application, which is deployed somewhere on the internet
-A link to your GitHub repository, so we can see the progress on your application
-A README.md file with the requirements stated above
+Project can be viewed here: (Rotten-Flix)[https://rottenflix.netlify.app]
