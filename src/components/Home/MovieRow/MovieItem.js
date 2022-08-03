@@ -25,7 +25,7 @@ const MovieItem = ({ movie }) => {
         if (rating > 0 && review) {
             const ratingResponse = await SaveRating({rating: rating, username: location.state.user.uid, movie: movie._id})
             const reviewResponse = await SaveReview({review: review, username: location.state.user.uid, movie: movie._id})
-            const bool = ratingResponse !== 200 && reviewResponse !== 200;
+            const bool = ratingResponse.status !== 200 && reviewResponse.status !== 200;
             
             bool ? setError({...error, display: true, message: `${ratingResponse.message} : ${reviewResponse.message}`})
             : ratingResponse.status !== 200 ? setError({...error, display: true, message: ratingResponse.message }) : setError({...error, display: true, message: reviewResponse.message })
@@ -62,11 +62,11 @@ const MovieItem = ({ movie }) => {
                 </Modal.Header>
                 <Modal.Body>
                 {error.display && <Error setError={setError} error={error} />}
-                    <p>Genre: {movie.genre}</p>
-                    <p>Running Time In Minutes: {movie.runningTimeInMinutes}</p>
+                    <p><b>Genre:</b> {movie.genre}</p>
+                    <p><b>Running Time In Minutes:</b> {movie.runningTimeInMinutes}</p>
                     {overAllRating > 0 ? 
                         <Form.Group className="mb-3" controlId="Form.ControlInput">
-                            <Form.Label>Rating</Form.Label>
+                            <Form.Label><b>Rating</b></Form.Label>
                             <Rating initialValue={overAllRating} readonly />
                         </Form.Group>
                         :
@@ -74,7 +74,7 @@ const MovieItem = ({ movie }) => {
                     }
                     <Form>
                         <Form.Group className="mb-3" controlId="Form.ControlInput">
-                            <Form.Label>Add Rating</Form.Label>
+                            <Form.Label><b>Add Rating</b></Form.Label>
                             <Rating onClick={handleRating} ratingValue={rating} />
                         </Form.Group>
                         <FloatingLabel
@@ -87,7 +87,7 @@ const MovieItem = ({ movie }) => {
                     </Form>
                     {movie.reviews.length ?
                         movie.reviews.map( (review,key) => (
-                            <p key={key}>{review.review}</p>
+                            <input key={key} type="text" className="form-control my-4" disabled placeholder={`"${review.review}" - ${review.username.username}`} />
                         ))
                         :
                         <p>No Reviews...</p>
