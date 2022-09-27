@@ -10,3 +10,5 @@ Username: demo || Password: demo
 ```
 
 Project can be viewed here: [Rotten-Flix](https://rottenflix.netlify.app)
+
+Back-end code can be found under Rotten-Flix-Server: https://github.com/amyers3000/Rotten-Flix-Server/
